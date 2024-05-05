@@ -15,7 +15,7 @@ namespace zxorm {
         return (result & 0xff) == SQLITE_CONSTRAINT;
     }
 
-    class Error : std::exception {
+    class Error : public std::exception {
     protected:
         std::string _message;
         int _sqlite_result = SQLITE_OK;

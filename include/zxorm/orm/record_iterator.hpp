@@ -50,6 +50,11 @@ namespace zxorm {
             return_t& operator*() {
                 return _current;
             }
+
+            return_t* operator->() {
+                return &_current;
+            }
+
             bool operator==(const iterator& other) const {
                 // nullptr means end
                 if (!_stmt && other._stmt && other._stmt->done()) return true;
