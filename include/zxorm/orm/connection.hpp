@@ -86,7 +86,6 @@ namespace zxorm {
         auto make_delete_query();
 
         auto make_statement(const std::string& query);
-        void exec(const std::string& query);
 
         // The conditional makes it impossible to deduce the type T apparently :(
         // so the public inserts call this implementation
@@ -176,6 +175,7 @@ namespace zxorm {
         void truncate();
 
         void set_foreign_keys(bool on);
+        void exec(const std::string& query);
     };
 
     template <class... Table>
